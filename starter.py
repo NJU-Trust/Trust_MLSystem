@@ -1,6 +1,5 @@
 from flask import Flask
 from flask_cors import *
-from processor import *
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import sessionmaker
@@ -12,6 +11,7 @@ CONSTR = 'mysql+mysqlconnector://root:123456@localhost:3306/trust?charset=utf8'
 engine = create_engine(CONSTR, echo=True)
 db_session = sessionmaker(bind=engine)
 session = db_session()
+from processor import *
 
 @app.route("/process", methods=["POST"])
 def precess():
