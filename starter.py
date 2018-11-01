@@ -25,5 +25,12 @@ def precess():
     session.execute('update user set credit_score=\''+str(score) +'\' where username=\'' + username + '\';')
     return "success"
 
+
+@app.route("/", methods=["POST","GET"])
+def connect():
+    return "success connect!!!"
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8001)
