@@ -7,7 +7,7 @@ from sqlalchemy import create_engine
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-CONSTR = 'mysql+mysqlconnector://root:123456@localhost:3306/trust?charset=utf8'
+CONSTR = 'mysql+mysqlconnector://root:123456@193.112.82.110:3306/trust?charset=utf8'
 engine = create_engine(CONSTR, echo=True)
 db_session = sessionmaker(bind=engine)
 session = db_session()
